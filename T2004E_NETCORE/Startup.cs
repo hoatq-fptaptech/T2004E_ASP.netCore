@@ -32,7 +32,9 @@ namespace T2004E_NETCORE
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   builder =>
                                   {
-                                      builder.WithOrigins("*");
+                                      builder.AllowAnyOrigin()
+                                       .AllowAnyMethod()
+                                       .AllowAnyHeader();
                                   });
             });
             services.AddControllers();
